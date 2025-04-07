@@ -53,3 +53,29 @@ class IDesktopController(ABC):
             The screenshot image as bytes (e.g., PNG format).
         """
         pass # Can delegate to an IScreenshotter implementation
+    
+    @abstractmethod
+    async def open_application(self, application_name: str):
+        """
+        Opens the specified application.
+        Implementation will be OS-dependent.
+        """
+        pass
+
+    @abstractmethod
+    async def navigate_url(self, url: str):
+        """
+        Opens the given URL, likely in the default web browser.
+        Might involve opening the browser first if not already open.
+        """
+        pass
+
+    @abstractmethod
+    async def scroll(self, direction: str, amount: int):
+        """Scrolls the screen ('up', 'down', 'left', 'right')."""
+        pass
+    
+    @abstractmethod
+    async def move_mouse(self, x: int, y: int):
+        """Moves the mouse cursor to the specified coordinates."""
+        pass    

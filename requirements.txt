@@ -1,1 +1,12 @@
-# requirements.txt
+# --- Core Application ---
+python-dotenv==1.0.1
+pydantic>=2.6.0,<2.7.0  # Pinned to v2.6.x for stability
+Pillow==10.3.0
+
+# --- Desktop Interaction ---
+mss==9.0.1
+pyautogui==0.9.54
+
+# --- AI Services ---
+openai>=1.12.0,<1.13.0  # Compatible with Pydantic 2.6.x
+replicate==0.28.0
